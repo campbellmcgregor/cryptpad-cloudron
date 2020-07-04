@@ -2,4 +2,4 @@
 
 set -eu
 
-exec /usr/local/bin/gosu cloudron:cloudron /app/code/server node
+exec /usr/local/bin/gosu cloudron:cloudron /app/code/node server
