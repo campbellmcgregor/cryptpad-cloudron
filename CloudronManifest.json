@@ -4,7 +4,9 @@
   "healthCheckPath": "/",
   "httpPort": 3000,
   "addons": {
-    "localstorage": {}
+    "localstorage": {},
+    "sendmail": {}
   },
-  "manifestVersion": 2
+  "manifestVersion": 2,
+  "memoryLimit": 524288000
 }
