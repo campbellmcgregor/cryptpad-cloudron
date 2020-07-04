@@ -14,10 +14,15 @@ RUN git clone https://github.com/xwiki-labs/cryptpad.git . &&\
 RUN npm install && \
     bower install --allow-root
 
-RUN mkdir -p /app/data
+RUN mkdir -p /app/data /app/pkg
 
 COPY config.js /app/data
 
 RUN ln /app/data/config.js /app/code/config/config.js && \
     chown cloudron:cloudron /app/data -R
 
+COPY start.sh /app/pkg
+
+RUN chmod +x /app/pkg/start.sh
+
+cmd [ "/app/pkg/start.sh"]
