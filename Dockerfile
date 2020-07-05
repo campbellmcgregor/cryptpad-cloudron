@@ -19,10 +19,12 @@ RUN mkdir -p /app/data /app/pkg
 COPY config.js /app/data
 
 RUN ln /app/data/config.js /app/code/config/config.js && \
-    chown cloudron:cloudron /app/data -R
+    chown cloudron:cloudron /app/data -R && \
+    chown cloudron:cloudron /app/code -R
 
 COPY start.sh /app/pkg
 
 RUN chmod +x /app/pkg/start.sh
+
 
 cmd [ "/app/pkg/start.sh"]
